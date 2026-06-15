@@ -26,3 +26,5 @@ frontend/out/
 # ─── Misc ────────────────────────────────────────────────────────────────────
 ThinkR_PRD.txt
 *.log
+backend/.env
+frontend/.env.local
