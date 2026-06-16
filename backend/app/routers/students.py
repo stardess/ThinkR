@@ -1,19 +1,71 @@
 import uuid
-from typing import Annotated
+from typing import Annotated, Optional
 
-from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile, status
+from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, UploadFile, status
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.database import get_db
-from app.dependencies import get_current_student
-from app.models import StudentProfile, User
+from app.dependencies import get_current_student, get_current_user
+from app.models import ResearchProject, StudentProfile, User
 from app.schemas import IngestRequest, IngestResult, StudentProfileOut, StudentProfileUpdate
 from app.services.ai_ingestion import ingest_resume_file, ingest_student_text
+from app.services.matching import compute_compatibility_detailed, score_to_tier
 
 router = APIRouter()
 
+
+@router.get("", response_model=list[StudentProfileOut])
+async def list_students(
+    current_user: Annotated[User, Depends(get_current_user)],
+    db: AsyncSession = Depends(get_db),
+    project_id: Optional[uuid.UUID] = Query(None),
+    skip: int = Query(0, ge=0),
+    limit: int = Query(20, ge=1, le=100),
+):
+    """
+    Return a paginated list of public (non-anonymous, profile-complete) students.
+    If project_id is provided, each result includes a compatibility_score and tier
+    computed against that project, sorted by score descending.
+    """
+    result = await db.execute(
+        select(StudentProfile)
+        .where(
+            StudentProfile.is_anonymous == False,
+            StudentProfile.profile_complete == True,
+        )
+        .options(selectinload(StudentProfile.user))
+        .offset(skip)
+        .limit(limit)
+    )
+    students = result.scalars().all()
+
+    if not project_id:
+        return students
+
+    # Load the project with researcher so compute_compatibility works
+    proj_result = await db.execute(
+        select(ResearchProject)
+        .where(ResearchProject.id == project_id)
+        .options(selectinload(ResearchProject.researcher))
+    )
+    project = proj_result.scalar_one_or_none()
+    if not project:
+        return students
+
+    # Build scored output
+    scored = []
+    for student in students:
+        detail = compute_compatibility_detailed(student, project)
+        out = StudentProfileOut.model_validate(student)
+        out.compatibility_score = detail["score"]
+        out.tier = score_to_tier(detail["score"])
+        out.score_breakdown = detail["breakdown"]
+        scored.append(out)
+
+    scored.sort(key=lambda s: s.compatibility_score or 0, reverse=True)
+    return scored
 
 @router.get("/me", response_model=StudentProfileOut)
 async def get_my_profile(

@@ -63,6 +63,7 @@ class StudentProfileCreate(BaseModel):
     start_date: Optional[str] = None
     remote_preference: Optional[str] = None
     preferred_domains: list[str] = []
+    prior_experience: list[str] = []
     bio: Optional[str] = None
     is_anonymous: bool = False
 
@@ -83,12 +84,16 @@ class StudentProfileOut(BaseModel):
     start_date: Optional[str]
     remote_preference: Optional[str]
     preferred_domains: list[str]
+    prior_experience: list[str] = []
     bio: Optional[str]
     resume_url: Optional[str]
     is_anonymous: bool
     profile_complete: bool
     created_at: datetime
     user: Optional[UserOut] = None
+    compatibility_score: Optional[float] = None
+    tier: Optional[dict] = None
+    score_breakdown: Optional[list] = None
 
     model_config = {"from_attributes": True}
 
@@ -165,11 +170,18 @@ class ProjectOut(BaseModel):
     created_at: datetime
     researcher: Optional[ResearcherProfileOut] = None
     compatibility_score: Optional[float] = None
+    tier: Optional[dict] = None
+    score_breakdown: Optional[list] = None
 
     model_config = {"from_attributes": True}
 
 
 # ─── Match ────────────────────────────────────────────────────────────────────
+
+class ProfessorRequestBody(BaseModel):
+    student_id: uuid.UUID  # StudentProfile.id
+    project_id: uuid.UUID
+
 
 class SwipeRequest(BaseModel):
     project_id: uuid.UUID
@@ -207,6 +219,7 @@ class MatchOut(BaseModel):
     created_at: datetime
     updated_at: datetime
     project: Optional[ProjectOut] = None
+    student: Optional[StudentProfileOut] = None
 
     model_config = {"from_attributes": True}
 

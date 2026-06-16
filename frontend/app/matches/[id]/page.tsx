@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Navbar from "@/components/Navbar";
-import { messagesApi } from "@/lib/api";
+import AppShell from "@/components/AppShell";
+import { matchesApi, messagesApi } from "@/lib/api";
 import { getUser } from "@/lib/auth";
 import { Match, Message } from "@/lib/types";
-import { matchesApi } from "@/lib/api";
 
 export default function MatchChatPage({ params }: { params: { id: string } }) {
   const currentUser = getUser();
@@ -13,13 +12,12 @@ export default function MatchChatPage({ params }: { params: { id: string } }) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [showSchedule, setShowSchedule] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Load match details and messages
     matchesApi.listMatches().then(({ data }) => {
-      const found = (data as Match[]).find((m) => m.id === params.id);
-      setMatch(found || null);
+      setMatch((data as Match[]).find((m) => m.id === params.id) || null);
     });
     messagesApi.getMessages(params.id).then(({ data }) => setMessages(data));
   }, [params.id]);
@@ -41,62 +39,63 @@ export default function MatchChatPage({ params }: { params: { id: string } }) {
     }
   }
 
+  const lab =
+    match?.project?.researcher?.lab_name ||
+    match?.project?.researcher?.department ||
+    "Research Lab";
+  const counterpart =
+    currentUser?.role === "student"
+      ? match?.project?.researcher?.user?.name
+      : match?.student?.user?.name;
+
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
-      <Navbar />
-
-      {/* Chat header */}
-      <div className="bg-white border-b border-slate-100 px-6 py-4">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="font-bold text-brand-900 text-lg">
-            {match?.project?.title || "Match"}
-          </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
-            {match?.project?.researcher?.lab_name ||
-              match?.project?.researcher?.department ||
-              "Research Lab"}
-            {match?.project?.researcher?.user?.name &&
-              ` · ${match.project.researcher.user.name}`}
-          </p>
+    <AppShell
+      title="Chat"
+      actions={
+        <button onClick={() => setShowSchedule(true)} className="btn-primary !px-4 !py-2 text-sm">
+          📅 Schedule call
+        </button>
+      }
+    >
+      <div className="mx-auto flex h-[calc(100vh-7.5rem)] max-w-3xl flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white">
+        {/* Conversation header */}
+        <div className="flex items-center gap-3 border-b border-slate-100 px-5 py-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-100 text-sm font-bold uppercase text-brand-700">
+            {(counterpart || match?.project?.title || "?")[0]}
+          </div>
+          <div className="min-w-0">
+            <p className="truncate font-bold text-brand-900">{match?.project?.title || "Match"}</p>
+            <p className="truncate text-xs text-slate-500">
+              {lab}
+              {counterpart ? ` · ${counterpart}` : ""}
+            </p>
+          </div>
         </div>
-      </div>
 
-      {/* Messages */}
-      <main className="flex-1 overflow-y-auto px-4 py-6">
-        <div className="mx-auto max-w-3xl space-y-4">
+        {/* Messages */}
+        <div className="flex-1 space-y-4 overflow-y-auto bg-canvas px-4 py-6">
           {messages.length === 0 && (
-            <div className="text-center text-sm text-slate-400 py-12">
+            <div className="py-12 text-center text-sm text-slate-400">
               🎉 It&apos;s a match! Send the first message.
             </div>
           )}
-
           {messages.map((msg) => {
             const isOwn = msg.sender_id === currentUser?.id;
             return (
-              <div
-                key={msg.id}
-                className={`flex gap-3 ${isOwn ? "justify-end" : "justify-start"}`}
-              >
+              <div key={msg.id} className={`flex gap-3 ${isOwn ? "justify-end" : "justify-start"}`}>
                 {!isOwn && (
-                  <div className="h-8 w-8 flex-shrink-0 rounded-full bg-brand-100 text-brand-700 text-xs font-bold flex items-center justify-center uppercase">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-100 text-xs font-bold uppercase text-brand-700">
                     {msg.sender?.name?.[0] ?? "?"}
                   </div>
                 )}
                 <div
                   className={`max-w-[75%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                    isOwn
-                      ? "bg-brand-600 text-white rounded-br-sm"
-                      : "bg-white shadow-sm text-slate-800 rounded-bl-sm"
+                    isOwn ? "rounded-br-sm bg-brand-600 text-white" : "rounded-bl-sm bg-white text-slate-800 shadow-sm"
                   }`}
                 >
                   {msg.content}
-                  <div
-                    className={`text-xs mt-1 ${isOwn ? "text-brand-200" : "text-slate-400"}`}
-                  >
-                    {new Date(msg.created_at).toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
+                  <div className={`mt-1 text-xs ${isOwn ? "text-brand-200" : "text-slate-400"}`}>
+                    {new Date(msg.created_at).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                   </div>
                 </div>
               </div>
@@ -104,16 +103,11 @@ export default function MatchChatPage({ params }: { params: { id: string } }) {
           })}
           <div ref={bottomRef} />
         </div>
-      </main>
 
-      {/* Input bar */}
-      <div className="bg-white border-t border-slate-100 px-4 py-4">
-        <form
-          onSubmit={sendMessage}
-          className="mx-auto max-w-3xl flex gap-3 items-end"
-        >
+        {/* Input */}
+        <form onSubmit={sendMessage} className="flex items-end gap-3 border-t border-slate-100 px-4 py-3">
           <textarea
-            className="input flex-1 resize-none min-h-[44px] max-h-[140px]"
+            className="input max-h-[140px] min-h-[44px] flex-1 resize-none"
             placeholder="Type a message…"
             value={input}
             rows={1}
@@ -125,15 +119,32 @@ export default function MatchChatPage({ params }: { params: { id: string } }) {
               }
             }}
           />
-          <button
-            type="submit"
-            className="btn-primary py-3 px-5 flex-shrink-0"
-            disabled={sending || !input.trim()}
-          >
+          <button type="submit" className="btn-primary flex-shrink-0 !px-5 !py-3" disabled={sending || !input.trim()}>
             Send
           </button>
         </form>
       </div>
-    </div>
+
+      {/* Schedule modal */}
+      {showSchedule && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4" onClick={() => setShowSchedule(false)}>
+          <div className="w-full max-w-sm rounded-2xl bg-white p-6 shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <h2 className="mb-1 text-lg font-bold text-brand-900">Schedule a call</h2>
+            <p className="mb-6 text-sm text-slate-500">This opens a new meeting link — share it with your match.</p>
+            <div className="space-y-3">
+              <a href="https://zoom.us/start/videomeeting" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center">
+                Open Zoom
+              </a>
+              <a href="https://meet.google.com/new" target="_blank" rel="noopener noreferrer" className="btn-secondary w-full justify-center">
+                Open Google Meet
+              </a>
+            </div>
+            <button onClick={() => setShowSchedule(false)} className="mt-4 w-full text-center text-xs text-slate-400 hover:text-slate-600">
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+    </AppShell>
   );
 }

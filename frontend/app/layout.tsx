@@ -17,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="bg-slate-50 text-slate-800 font-sans antialiased">
+      <body className="bg-canvas text-slate-800 font-sans antialiased">
         {children}
       </body>
     </html>

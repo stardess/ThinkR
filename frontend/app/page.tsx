@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const FEATURES = [
   {
@@ -39,7 +40,14 @@ export default function LandingPage() {
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span className="text-xl font-bold text-brand-900">ThinkR</span>
+          <Image
+            src="/thinkr-logo.png"
+            alt="Thinkr — Research is for Everyone"
+            width={130}
+            height={48}
+            priority
+            className="h-9 w-auto"
+          />
           <nav className="flex items-center gap-3">
             <Link href="/login" className="btn-secondary py-2 px-4">
               Log in
@@ -85,9 +93,6 @@ export default function LandingPage() {
       {/* Features */}
       <section className="bg-white py-20 px-6">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-3xl font-bold text-brand-900 mb-12">
-            Everything you need, nothing you don&apos;t
-          </h2>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
               <div key={f.title} className="card hover:shadow-card-hover transition-shadow">

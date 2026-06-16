@@ -88,6 +88,7 @@ class StudentProfile(Base):
     start_date: Mapped[str | None] = mapped_column(String(50), nullable=True)
     remote_preference: Mapped[str | None] = mapped_column(String(50), nullable=True)
     preferred_domains: Mapped[list] = mapped_column(JSON, default=list)
+    prior_experience: Mapped[list] = mapped_column(JSON, default=list)
     bio: Mapped[str | None] = mapped_column(Text, nullable=True)
     resume_url: Mapped[str | None] = mapped_column(String(500), nullable=True)
     is_anonymous: Mapped[bool] = mapped_column(Boolean, default=False)

@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.database import create_tables
-from app.routers import auth, discover, matches, messages, researchers, students
+from app.routers import auth, discover, matches, messages, notifications, researchers, students
 
 app = FastAPI(
     title="ThinkR API",
@@ -31,6 +31,7 @@ app.include_router(researchers.router, prefix="/researchers", tags=["Researchers
 app.include_router(discover.router, prefix="/discover", tags=["Discover"])
 app.include_router(matches.router, prefix="/matches", tags=["Matches"])
 app.include_router(messages.router, prefix="/messages", tags=["Messages"])
+app.include_router(notifications.router, prefix="/notifications", tags=["Notifications"])
 
 
 @app.get("/health")

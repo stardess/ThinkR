@@ -39,4 +39,47 @@
   .tag-sky {
     @apply inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-700;
   }
+
+  /* ─── Jobright-style app shell utilities ──────────────────────────────── */
+
+  /* Left icon-rail navigation link */
+  .nav-link {
+    @apply flex flex-col items-center gap-1 rounded-xl px-2 py-2.5 text-[10px] font-semibold leading-none text-slate-400 transition-colors hover:bg-slate-100 hover:text-slate-600;
+  }
+  .nav-link-active {
+    @apply bg-brand-50 text-brand-700 hover:bg-brand-50 hover:text-brand-700;
+  }
+
+  /* Bold uppercase section title (e.g. "DISCOVER") */
+  .section-title {
+    @apply text-2xl font-extrabold uppercase tracking-tight text-brand-900;
+  }
+
+  /* Breadcrumb-style tab */
+  .tab {
+    @apply relative pb-1 text-sm font-semibold text-slate-400 transition-colors hover:text-slate-700;
+  }
+  .tab-active {
+    @apply text-brand-900 after:absolute after:-bottom-px after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-brand-600 after:content-[''];
+  }
+
+  /* Rounded filter / select pill */
+  .filter-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3.5 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-slate-300 hover:text-slate-900;
+  }
+
+  /* List-style result card (Jobright job card) */
+  .job-card {
+    @apply rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:border-brand-200 hover:shadow-card-hover;
+  }
+
+  /* Dark gradient match panel that hosts the score ring */
+  .match-panel {
+    @apply flex flex-col items-center justify-center gap-1.5 rounded-2xl bg-gradient-to-br from-ink to-ink-700 px-5 py-4 text-center text-white;
+  }
+
+  /* Meta row item with leading icon */
+  .meta-item {
+    @apply inline-flex items-center gap-1.5 text-sm text-slate-500;
+  }
 }

@@ -45,6 +45,8 @@ export const authApi = {
 export const studentsApi = {
   getMyProfile: () => apiClient.get("/students/me"),
   updateMyProfile: (data: object) => apiClient.put("/students/me", data),
+  listStudents: (params?: { skip?: number; limit?: number; project_id?: string }) =>
+    apiClient.get("/students", { params }),
   ingestFreeText: (free_text: string) => {
     const form = new FormData();
     form.append("free_text", free_text);
@@ -86,13 +88,21 @@ export const matchesApi = {
     apiClient.post("/matches/swipe", { project_id, direction }),
   researcherSwipe: (match_id: string, direction: "left" | "right") =>
     apiClient.post("/matches/researcher-swipe", { match_id, direction }),
+  professorRequest: (student_id: string, project_id: string) =>
+    apiClient.post("/matches/professor-request", { student_id, project_id }),
   listMatches: () => apiClient.get("/matches"),
 };
 
-// ─── Messages ─────────────────────────────────────────────────────────────────
+// ─── Messages ────────────────────────────────────────────────────────────────────
 
 export const messagesApi = {
   getMessages: (matchId: string) => apiClient.get(`/messages/${matchId}`),
   sendMessage: (matchId: string, content: string) =>
     apiClient.post(`/messages/${matchId}`, { content }),
+};
+
+// ─── Notifications ────────────────────────────────────────────────────────────────
+
+export const notificationsApi = {
+  getSummary: () => apiClient.get("/notifications/summary"),
 };

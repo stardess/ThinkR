@@ -7,9 +7,9 @@ from sqlalchemy.orm import selectinload
 
 from app.database import get_db
 from app.dependencies import get_current_student
-from app.models import Match, ResearchProject, StudentProfile
+from app.models import Match, ResearchProject, ResearcherProfile, StudentProfile
 from app.schemas import ProjectOut
-from app.services.matching import rank_projects
+from app.services.matching import compute_compatibility_detailed, score_to_tier
 
 router = APIRouter()
 
@@ -39,7 +39,9 @@ async def discover_projects(
     query = (
         select(ResearchProject)
         .where(ResearchProject.is_active == True)
-        .options(selectinload(ResearchProject.researcher))
+        .options(
+            selectinload(ResearchProject.researcher).selectinload(ResearcherProfile.user)
+        )
     )
     if swiped_ids:
         query = query.where(ResearchProject.id.not_in(swiped_ids))
@@ -59,14 +61,15 @@ async def discover_projects(
             if any(domain_lower in area.lower() for area in (p.researcher.research_areas if p.researcher else []))
         ]
 
-    # Rank by compatibility score
-    ranked = rank_projects(student, projects)
-
-    # Attach compatibility scores to project objects and return
+    # Score each project (with breakdown) and rank by compatibility descending
     output = []
-    for project, score in ranked:
+    for project in projects:
+        detail = compute_compatibility_detailed(student, project)
         project_out = ProjectOut.model_validate(project)
-        project_out.compatibility_score = score
+        project_out.compatibility_score = detail["score"]
+        project_out.tier = score_to_tier(detail["score"])
+        project_out.score_breakdown = detail["breakdown"]
         output.append(project_out)
 
+    output.sort(key=lambda p: p.compatibility_score or 0, reverse=True)
     return output

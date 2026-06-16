@@ -69,11 +69,22 @@ async def ingest_student_text(text: str) -> IngestResult:
 
 async def ingest_resume_file(file_bytes: bytes, filename: str) -> str:
     """
-    Extract text from an uploaded file (PDF/DOCX). In production, integrate a
-    document parsing service (e.g. AWS Textract, PyMuPDF). Here we return the
-    raw bytes decoded as utf-8 (works for plain-text uploads in development).
+    Extract plain text from an uploaded file.
+    Supports PDF (via PyMuPDF), DOCX (via python-docx), and plain text.
+    Falls back to UTF-8 decode for any unrecognised format.
     """
+    fname = filename.lower()
     try:
-        return file_bytes.decode("utf-8", errors="ignore")
+        if fname.endswith(".pdf"):
+            import fitz  # PyMuPDF
+            doc = fitz.open(stream=file_bytes, filetype="pdf")
+            return "\n".join(page.get_text() for page in doc)
+        elif fname.endswith(".docx"):
+            from io import BytesIO
+            from docx import Document
+            doc = Document(BytesIO(file_bytes))
+            return "\n".join(p.text for p in doc.paragraphs)
+        else:
+            return file_bytes.decode("utf-8", errors="ignore")
     except Exception:
-        return ""
+        return file_bytes.decode("utf-8", errors="ignore")

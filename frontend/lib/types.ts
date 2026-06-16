@@ -18,6 +18,13 @@ export interface AuthState {
 
 // ─── Student ──────────────────────────────────────────────────────────────────
 
+export interface ScoreSignal {
+  label: string;
+  earned: number;
+  max: number;
+  detail: string;
+}
+
 export interface StudentProfile {
   id: string;
   user_id: string;
@@ -30,12 +37,16 @@ export interface StudentProfile {
   start_date: string | null;
   remote_preference: "remote" | "in-person" | "hybrid" | null;
   preferred_domains: string[];
+  prior_experience: string[];
   bio: string | null;
   resume_url: string | null;
   is_anonymous: boolean;
   profile_complete: boolean;
   created_at: string;
   user?: User;
+  compatibility_score?: number;
+  tier?: { label: string; color: string };
+  score_breakdown?: ScoreSignal[];
 }
 
 export interface IngestResult {
@@ -81,6 +92,8 @@ export interface ResearchProject {
   created_at: string;
   researcher?: ResearcherProfile;
   compatibility_score?: number;
+  tier?: { label: string; color: string };
+  score_breakdown?: ScoreSignal[];
 }
 
 // ─── Match ────────────────────────────────────────────────────────────────────
@@ -99,9 +112,19 @@ export interface Match {
   created_at: string;
   updated_at: string;
   project?: ResearchProject;
+  student?: StudentProfile;
 }
 
-// ─── Message ──────────────────────────────────────────────────────────────────
+// ─── Notifications ─────────────────────────────────────────────────────────────────
+
+export interface NotificationSummary {
+  new_matches: number;
+  unread_messages: number;
+  incoming_requests: number;
+  pending_swipes: number;
+}
+
+// ─── Message ─────────────────────────────────────────────────────────────────
 
 export interface Message {
   id: string;

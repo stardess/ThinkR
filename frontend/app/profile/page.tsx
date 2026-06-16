@@ -1,11 +1,9 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import AppShell from "@/components/AppShell";
 import { studentsApi } from "@/lib/api";
-import { IngestResult, StudentProfile } from "@/lib/types";
-
-type Step = "upload" | "review";
+import { StudentProfile } from "@/lib/types";
 
 function TagInput({
   label,
@@ -27,7 +25,7 @@ function TagInput({
   return (
     <div>
       <label className="label">{label}</label>
-      <div className="flex flex-wrap gap-2 mb-2">
+      <div className="mb-2 flex flex-wrap gap-2">
         {value.map((tag) => (
           <span
             key={tag}
@@ -46,7 +44,7 @@ function TagInput({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), add())}
         />
-        <button type="button" className="btn-secondary py-2 px-4" onClick={add}>
+        <button type="button" className="btn-secondary px-4 py-2" onClick={add}>
           Add
         </button>
       </div>
@@ -54,153 +52,61 @@ function TagInput({
   );
 }
 
-export default function StudentOnboarding() {
-  const router = useRouter();
-  const [step, setStep] = useState<Step>("upload");
-  const [freeText, setFreeText] = useState("");
-  const [file, setFile] = useState<File | null>(null);
-  const [parsing, setParsing] = useState(false);
-  const [parseError, setParseError] = useState("");
+export default function ProfileEditPage() {
+  const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [profile, setProfile] = useState<Partial<StudentProfile>>({});
 
-  const [profile, setProfile] = useState<Partial<StudentProfile>>({
-    academic_year: "",
-    major: "",
-    skills: [],
-    interests: [],
-    gpa_range: "",
-    preferred_domains: [],
-    prior_experience: [],
-    hours_per_week: undefined,
-    start_date: "",
-    remote_preference: "hybrid",
-    bio: "",
-    is_anonymous: false,
-  });
-
-  async function handleParse() {
-    setParsing(true);
-    setParseError("");
-    try {
-      let res;
-      if (file) {
-        res = await studentsApi.ingestFile(file);
-      } else if (freeText.trim()) {
-        res = await studentsApi.ingestFreeText(freeText);
-      } else {
-        setParseError("Please paste some text or upload a file.");
-        setParsing(false);
-        return;
-      }
-      const result: IngestResult = res.data;
-      setProfile((p) => ({
-        ...p,
-        academic_year: result.academic_year || p.academic_year,
-        major: result.major || p.major,
-        skills: result.skills.length ? result.skills : p.skills,
-        interests: result.interests.length ? result.interests : p.interests,
-        gpa_range: result.gpa_range || p.gpa_range,
-        prior_experience: result.prior_experience?.length ? result.prior_experience : p.prior_experience,
-        bio: result.summary || p.bio,
-      }));
-      setStep("review");
-    } catch (err: unknown) {
-      setParseError("Parsing failed. You can still fill in your profile manually.");
-      setStep("review");
-    } finally {
-      setParsing(false);
-    }
-  }
+  useEffect(() => {
+    studentsApi
+      .getMyProfile()
+      .then((res) => setProfile(res.data))
+      .finally(() => setLoading(false));
+  }, []);
 
   async function handleSave(e: React.FormEvent) {
     e.preventDefault();
     setSaving(true);
+    setSaved(false);
     try {
-      await studentsApi.updateMyProfile(profile);
-      router.push("/discover");
+      // Send only the editable fields the update schema accepts.
+      const payload = {
+        academic_year: profile.academic_year || null,
+        major: profile.major || null,
+        skills: profile.skills || [],
+        interests: profile.interests || [],
+        gpa_range: profile.gpa_range || null,
+        hours_per_week: profile.hours_per_week ?? null,
+        start_date: profile.start_date || null,
+        remote_preference: profile.remote_preference || null,
+        preferred_domains: profile.preferred_domains || [],
+        prior_experience: profile.prior_experience || [],
+        bio: profile.bio || null,
+        is_anonymous: profile.is_anonymous ?? false,
+      };
+      const { data } = await studentsApi.updateMyProfile(payload);
+      setProfile(data);
+      setSaved(true);
+      window.setTimeout(() => setSaved(false), 3000);
     } catch (err: unknown) {
-      const msg = (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail || "Failed to save profile. Please try again.";
+      const msg =
+        (err as { response?: { data?: { detail?: string } } })?.response?.data?.detail ||
+        "Failed to save profile. Please try again.";
       alert("Save error: " + msg);
-      console.error(err);
     } finally {
       setSaving(false);
     }
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-brand-50 px-4 py-12">
+    <AppShell title="Profile">
       <div className="mx-auto max-w-2xl">
-        {/* Progress */}
-        <div className="flex items-center gap-3 mb-8">
-          <div
-            className={`h-2 flex-1 rounded-full ${step === "upload" ? "bg-brand-600" : "bg-brand-200"}`}
-          />
-          <div
-            className={`h-2 flex-1 rounded-full ${step === "review" ? "bg-brand-600" : "bg-slate-200"}`}
-          />
-        </div>
-
-        {step === "upload" && (
-          <div className="card">
-            <h1 className="text-2xl font-bold text-brand-900 mb-1">Tell us about yourself</h1>
-            <p className="text-sm text-slate-500 mb-6">
-              Paste your resume text or upload a file — our AI will extract your skills and interests
-              automatically.
-            </p>
-
-            {parseError && (
-              <div className="mb-4 rounded-xl bg-yellow-50 border border-yellow-100 px-4 py-3 text-sm text-yellow-700">
-                {parseError}
-              </div>
-            )}
-
-            <div className="mb-4">
-              <label className="label">Paste resume / bio text</label>
-              <textarea
-                className="input min-h-[180px] resize-y"
-                placeholder="e.g. I am a junior studying Computer Science at MIT with a 3.8 GPA. I have experience in Python, machine learning, and data visualization. I am interested in AI safety and computational neuroscience..."
-                value={freeText}
-                onChange={(e) => setFreeText(e.target.value)}
-              />
-            </div>
-
-            <div className="flex items-center gap-4 my-4">
-              <div className="flex-1 border-t border-slate-200" />
-              <span className="text-xs text-slate-400">or</span>
-              <div className="flex-1 border-t border-slate-200" />
-            </div>
-
-            <div>
-              <label className="label">Upload resume (PDF / DOCX / TXT)</label>
-              <input
-                type="file"
-                accept=".pdf,.docx,.txt"
-                className="block w-full text-sm text-slate-500 file:mr-4 file:rounded-xl file:border-0 file:bg-brand-50 file:px-4 file:py-2 file:text-xs file:font-semibold file:text-brand-700 hover:file:bg-brand-100"
-                onChange={(e) => setFile(e.target.files?.[0] || null)}
-              />
-            </div>
-
-            <div className="flex gap-3 mt-8">
-              <button className="btn-primary flex-1" onClick={handleParse} disabled={parsing}>
-                {parsing ? "Parsing…" : "Parse with AI →"}
-              </button>
-              <button className="btn-secondary" onClick={() => setStep("review")}>
-                Skip, fill manually
-              </button>
-            </div>
-          </div>
-        )}
-
-        {step === "review" && (
+        {loading ? (
+          <p className="animate-pulse text-sm text-slate-400">Loading…</p>
+        ) : (
           <form className="card space-y-6" onSubmit={handleSave}>
-            <div>
-              <h1 className="text-2xl font-bold text-brand-900 mb-1">Review your profile</h1>
-              <p className="text-sm text-slate-500">
-                AI-extracted fields are pre-filled. Edit anything that looks wrong.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
                 <label className="label">Academic year</label>
                 <select
@@ -315,7 +221,7 @@ export default function StudentOnboarding() {
                 id="anon"
                 type="checkbox"
                 className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
-                checked={profile.is_anonymous}
+                checked={profile.is_anonymous ?? false}
                 onChange={(e) => setProfile({ ...profile, is_anonymous: e.target.checked })}
               />
               <label htmlFor="anon" className="text-sm text-slate-600">
@@ -323,12 +229,15 @@ export default function StudentOnboarding() {
               </label>
             </div>
 
-            <button type="submit" className="btn-primary w-full" disabled={saving}>
-              {saving ? "Saving…" : "Save and start discovering →"}
-            </button>
+            <div className="flex items-center gap-3">
+              <button type="submit" className="btn-primary" disabled={saving}>
+                {saving ? "Saving…" : "Save changes"}
+              </button>
+              {saved && <span className="text-sm font-medium text-match">✓ Saved</span>}
+            </div>
           </form>
         )}
       </div>
-    </div>
+    </AppShell>
   );
 }

@@ -28,3 +28,7 @@ ThinkR_PRD.txt
 *.log
 backend/.env
 frontend/.env.local
+
+# ─── TypeScript / Next generated ─────────────────────────────────────────────
+frontend/next-env.d.ts
+*.tsbuildinfo
