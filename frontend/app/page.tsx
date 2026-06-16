@@ -39,7 +39,7 @@ export default function LandingPage() {
       {/* Nav */}
       <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <span className="text-xl font-bold text-brand-900">ThinkR</span>
+          <img src="/think_logo.png" alt="ThinkR" className="h-8 w-auto" />
           <nav className="flex items-center gap-3">
             <Link href="/login" className="btn-secondary py-2 px-4">
               Log in
@@ -52,7 +52,7 @@ export default function LandingPage() {
       </header>
 
       {/* Hero */}
-      <section className="flex flex-1 flex-col items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-white to-slate-50">
+      <section className="flex flex-1 flex-col items-center justify-center px-6 py-24 text-center bg-gradient-to-b from-white to-orange-50/40">
         <div className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold text-brand-700 mb-6">
           ✦ Academic Research Matchmaking
         </div>

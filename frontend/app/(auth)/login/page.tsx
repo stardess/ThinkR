@@ -32,11 +32,11 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-brand-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-orange-50 px-4">
       <div className="card w-full max-w-md">
         <div className="mb-8 text-center">
-          <Link href="/" className="text-2xl font-bold text-brand-900">
-            ThinkR
+          <Link href="/" className="inline-block">
+            <img src="/think_logo.png" alt="ThinkR" className="h-10 w-auto mx-auto" />
           </Link>
           <p className="mt-2 text-sm text-slate-500">Welcome back</p>
         </div>
