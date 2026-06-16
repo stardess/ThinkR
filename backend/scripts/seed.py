@@ -91,6 +91,35 @@ RESEARCHERS = [
             ),
         },
     },
+    {
+        "email": "annie.karitonze@nd.edu",
+        "name": "Dr. Annie Karitonze",
+        "profile": {
+            "department": "Computer Science and Engineering",
+            "lab_name": "Youth & Technology HCI Lab",
+            "title": "Assistant Professor",
+            "institution": "University of Notre Dame",
+            "research_areas": [
+                "Human-Computer Interaction",
+                "Social Computing",
+                "Online Safety",
+                "Usable Privacy and Security",
+                "Digital Youth",
+                "Child Welfare",
+                "Marginalized Populations",
+            ],
+            "bio": (
+                "Human-computer interaction researcher designing technology-driven solutions "
+                "that empower people and protect the well-being of youth and marginalized "
+                "communities. Uses human-centered and participatory design methods to study "
+                "adolescent online safety for teens in foster care. Fellow of the Lucy Family "
+                "Institute for Data and Society and an active member of the SIGCHI Latin "
+                "American HCI Community (LAIHC); a Latina advocate for diversity, inclusion, "
+                "and equity in computing. Mentors students closely and welcomes those new to "
+                "research who bring strong design instincts and care for the communities we serve."
+            ),
+        },
+    },
 ]
 
 PROJECTS = {
@@ -187,6 +216,32 @@ PROJECTS = {
             "duration": "2 semesters",
         },
     ],
+    "annie.karitonze@nd.edu": [
+        {
+            "title": "Designing Online Safety Tools for Teens in Foster Care",
+            "description_plain": (
+                "The Youth & Technology HCI Lab is hiring a research assistant for a funded, "
+                "human-centered study on adolescent online safety for teens in foster care. "
+                "Using participatory design and qualitative methods, the student will help "
+                "co-design and evaluate safety-focused mobile experiences with youth, run user "
+                "interviews and design workshops, analyze qualitative data, and prototype "
+                "interfaces in Figma. A strong fit for students interested in HCI, social "
+                "computing, online safety, and designing technology for marginalized and "
+                "vulnerable populations. No prior research experience required — we mentor "
+                "motivated students with strong design instincts."
+            ),
+            "required_skills": [
+                "Human-Computer Interaction", "User Research",
+                "Participatory Design", "Qualitative Coding", "Python",
+            ],
+            "preferred_skills": ["Figma", "Survey Design", "Mobile Development", "Data Visualization"],
+            "hours_per_week": 10,
+            "min_academic_year": "Junior",
+            "remote_option": True,
+            "start_date": "Fall 2026",
+            "duration": "2 semesters",
+        },
+    ],
 }
 
 STUDENTS = [
@@ -260,6 +315,39 @@ STUDENTS = [
             "remote_preference": "hybrid",
             "preferred_domains": ["health sciences", "biology"],
             "bio": "Freshman exploring research opportunities across science and health disciplines. Eager to learn lab and data skills.",
+            "profile_complete": True,
+            "is_anonymous": False,
+        },
+    },
+    {
+        "email": "kuria.githinji@nd.edu",
+        "name": "Kuria Githinji",
+        "profile": {
+            "academic_year": "Masters",
+            "major": "Computer Science",
+            "skills": [
+                "Human-Computer Interaction", "User Research", "Participatory Design",
+                "Qualitative Coding", "Python", "Figma", "Survey Design",
+                "Mobile Development", "Data Visualization", "JavaScript", "React",
+            ],
+            "interests": [
+                "Human-Computer Interaction", "Social Computing", "Online Safety", "Digital Youth",
+            ],
+            "gpa_range": "3.5–3.8",
+            "hours_per_week": 10,
+            "start_date": "Fall 2026",
+            "remote_preference": "hybrid",
+            "preferred_domains": [
+                "Usable Privacy and Security", "Child Welfare", "Marginalized Populations",
+            ],
+            "prior_experience": [],
+            "bio": (
+                "Incoming Computer Science master's student and a first-generation, international "
+                "scholar aiming for a PhD. New to formal research but deeply motivated by "
+                "human-centered design — built accessible mobile prototypes in coursework and a "
+                "campus app supporting student well-being. Eager to join an HCI lab studying "
+                "online safety and technology for youth and marginalized communities."
+            ),
             "profile_complete": True,
             "is_anonymous": False,
         },
@@ -423,9 +511,10 @@ async def main() -> None:
     await seed()
     print("\nSeed complete.")
     print(f"\nDemo credentials (password: {DEMO_PASSWORD}):")
-    print("  Researchers:  elena.ramirez@university.edu  |  marcus.chen@university.edu")
-    print("  Students:     alex.kim@student.edu  |  sofia.rodriguez@student.edu")
-    print("                jordan.lee@student.edu  |  sam.taylor@student.edu")
+    print("  Researchers:  annie.karitonze@nd.edu (★ video)  |  elena.ramirez@university.edu")
+    print("                marcus.chen@university.edu  |  leo.vasquez@university.edu")
+    print("  Students:     kuria.githinji@nd.edu (★ video)  |  alex.kim@student.edu")
+    print("                sofia.rodriguez@student.edu  |  jordan.lee@student.edu  |  sam.taylor@student.edu")
 
 
 if __name__ == "__main__":

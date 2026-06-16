@@ -1,0 +1,312 @@
+﻿ThinkR Research Opportunity Training Set
+1. Mitochondrial Stress and Exercise Recovery Study
+PI: Dr. Elena Ramirez
+Sponsoring Department: Biology
+Opportunity Type: Wet lab, pre-health, honors eligible
+Best-Fit Majors: Biology, biochemistry, exercise science, pre-medicine, pre-PT
+Research Opportunity Description:
+ The Ramirez Lab is recruiting undergraduate research assistants to support a study examining how mitochondrial stress markers change after high-intensity exercise and recovery. Students will assist with sample preparation, literature review, data entry, microscopy support, and basic analysis of cellular stress indicators. This opportunity is appropriate for students interested in medicine, human performance, molecular biology, or translational research. Students should expect structured training during the first month, followed by increasing responsibility in lab workflow, research documentation, and team meetings.
+Required Skills: General biology completed, comfort working in a lab, attention to detail, ability to follow written protocols, basic Excel skills.
+Preferred Skills: Pipetting, microscopy, chemistry coursework, interest in metabolism or sports medicine.
+User-Defined Criteria: Minimum 6 hours per week; must be available for one weekly lab meeting; in-person only; sophomores and above preferred; CITI training required within 30 days.
+PI Strengths and Preferences: Dr. Ramirez is highly structured, patient with new researchers, and strong at teaching lab technique. She prefers students who are consistent, careful, curious, and comfortable asking questions early rather than guessing.
+________________
+
+
+2. AI-Assisted Early Detection of Sepsis in Emergency Care
+PI: Dr. Marcus Chen
+Sponsoring Department: Computer Science and Emergency Medicine
+Opportunity Type: Data science, clinical informatics, pre-medicine
+Best-Fit Majors: Computer science, data science, statistics, public health, pre-medicine
+Research Opportunity Description:
+ This project explores whether machine learning models can help identify early sepsis risk using de-identified emergency care data. Research assistants will support data cleaning, variable labeling, literature review, exploratory analysis, and model performance summaries. Students will work at the intersection of healthcare, artificial intelligence, and clinical decision support. The project is ideal for students interested in medical school, health informatics, biomedical data science, emergency medicine, or responsible AI.
+Required Skills: Introductory statistics, basic Python or R, ability to work with spreadsheets, responsible handling of sensitive data.
+Preferred Skills: Machine learning coursework, healthcare data interest, HIPAA/CITI training, visualization experience.
+User-Defined Criteria: 8 hours per week; hybrid; must complete data privacy training; no direct patient contact; juniors and seniors preferred but strong sophomores considered.
+PI Strengths and Preferences: Dr. Chen is analytical, fast-paced, and outcomes-focused. He prefers students who are self-directed, comfortable troubleshooting code, and able to communicate technical findings in plain language for clinical audiences.
+________________
+
+
+3. Food Insecurity and Chronic Disease Risk Among College Students
+PI: Dr. Aisha Patel
+Sponsoring Department: Public Health
+Opportunity Type: Community health, survey research, health equity
+Best-Fit Majors: Public health, sociology, nutrition, psychology, pre-health
+Research Opportunity Description:
+ This study examines the relationship between food insecurity, stress, chronic disease risk factors, and academic persistence among college students. Student researchers will help recruit participants, manage survey instruments, conduct basic data checks, summarize literature, and support community resource mapping. The project offers practical exposure to public health research, health equity, social determinants of health, and student success initiatives.
+Required Skills: Strong communication, reliability, basic Excel or Google Sheets, interest in health equity.
+Preferred Skills: Qualtrics, community outreach, nutrition coursework, basic statistics.
+User-Defined Criteria: 4 to 6 hours per week; hybrid; must be comfortable discussing sensitive topics professionally; evening tabling events may occur twice per month.
+PI Strengths and Preferences: Dr. Patel is collaborative, student-centered, and strong at mentoring first-generation students. She prefers students who are empathetic, organized, culturally humble, and comfortable engaging with diverse student populations.
+________________
+
+
+4. Neurobiology of Sleep and Memory
+PI: Dr. Samuel Whitaker
+Sponsoring Department: Neuroscience
+Opportunity Type: Lab research, honors thesis pathway, pre-medicine
+Best-Fit Majors: Neuroscience, psychology, biology, cognitive science, honors
+Research Opportunity Description:
+ The Whitaker Lab studies how sleep patterns influence memory consolidation, attention, and cognitive performance in undergraduate students. Research assistants will help with participant scheduling, cognitive task administration, literature review, sleep diary management, and data entry. Advanced students may contribute to statistical analysis or honors thesis development. This opportunity is especially appropriate for students considering medicine, psychology, neuroscience graduate study, or clinical research.
+Required Skills: Introductory psychology or biology, confidentiality, detail orientation, comfort interacting with participants.
+Preferred Skills: SPSS, R, cognitive psychology coursework, prior research methods course.
+User-Defined Criteria: 6 hours per week; hybrid; must attend weekly team meeting; honors students may use project for thesis credit; CITI training required.
+PI Strengths and Preferences: Dr. Whitaker is reflective, theory-driven, and strong at developing students into independent thinkers. He prefers students who read carefully, ask conceptual questions, and are interested in linking biological mechanisms to human behavior.
+________________
+
+
+5. Water Quality Mapping in Agricultural Watersheds
+PI: Dr. Priya Nair
+Sponsoring Department: Environmental Science
+Opportunity Type: Field work, lab testing, GIS
+Best-Fit Majors: Environmental science, chemistry, biology, geography, sustainability studies
+Research Opportunity Description:
+ This field-based project monitors nutrient runoff, microbial indicators, and water quality trends in local agricultural watersheds. Student researchers will collect water samples, document site conditions, perform basic lab assays, enter field data, and assist with GIS mapping. The project provides hands-on experience in environmental monitoring, applied ecology, sustainability, and community-facing science.
+Required Skills: Comfort with outdoor fieldwork, basic lab safety, reliable transportation or ability to meet campus transport, attention to field documentation.
+Preferred Skills: GIS, chemistry lab experience, ecology coursework, interest in climate and agriculture.
+User-Defined Criteria: 5 hours per week; some Saturday mornings required; field and lab format; must be able to lift 20 pounds and work outdoors in variable weather.
+PI Strengths and Preferences: Dr. Nair is practical, methodical, and excellent at teaching applied field methods. She prefers students who are dependable, safety-conscious, and willing to work outside the traditional classroom setting.
+________________
+
+
+6. Pre-Med Clinical Shadowing Outcomes and Career Decision-Making
+PI: Dr. Jonathan Mercer
+Sponsoring Department: Health Professions Advising and Medical Education
+Opportunity Type: Medical education, qualitative research, pre-health
+Best-Fit Majors: Pre-medicine, health sciences, psychology, education, public health
+Research Opportunity Description:
+ This project investigates how structured clinical shadowing influences pre-medical students’ career clarity, professional identity formation, and understanding of healthcare delivery. Research assistants will help develop interview guides, recruit participants, transcribe interviews, code qualitative data, and summarize findings for advising and medical education audiences. This is a strong fit for students interested in medicine, advising, student success, or healthcare workforce development.
+Required Skills: Professionalism, strong writing, confidentiality, ability to conduct or transcribe interviews.
+Preferred Skills: Qualitative research, pre-health advising experience, interest in medical education, NVivo or Dedoose exposure.
+User-Defined Criteria: 4 hours per week; hybrid; CITI training required; must be comfortable discussing career uncertainty with peers.
+PI Strengths and Preferences: Dr. Mercer is mentorship-oriented, applied, and student-development focused. He prefers students who are reflective, service-minded, emotionally intelligent, and comfortable working with narrative data.
+________________
+
+
+7. Robotics for Assistive Mobility in Older Adults
+PI: Dr. Kendra Lowell
+Sponsoring Department: Mechanical Engineering
+Opportunity Type: Engineering design, rehabilitation technology, lab-based
+Best-Fit Majors: Mechanical engineering, biomedical engineering, computer science, pre-OT, pre-PT
+Research Opportunity Description:
+ The Lowell Lab is developing low-cost robotic assistive devices to support mobility, balance, and independence among older adults. Students may assist with prototype assembly, CAD modeling, sensor testing, user feedback sessions, literature review, and design documentation. This opportunity combines engineering, rehabilitation science, aging research, and human-centered design.
+Required Skills: Introductory engineering coursework, ability to document design changes, willingness to learn prototyping tools.
+Preferred Skills: SolidWorks, Arduino, biomechanics, human factors, 3D printing.
+User-Defined Criteria: 6 to 8 hours per week; in-person lab; students must attend design review meetings; safety training required before equipment use.
+PI Strengths and Preferences: Dr. Lowell is creative, hands-on, and iterative. She prefers students who build, test, revise, and communicate clearly with interdisciplinary teammates.
+________________
+
+
+8. Microplastics in Urban Soil and Stormwater Systems
+PI: Dr. Daniel Okafor
+Sponsoring Department: Chemistry
+Opportunity Type: Analytical chemistry, environmental health, lab and field
+Best-Fit Majors: Chemistry, environmental science, biology, public health
+Research Opportunity Description:
+ This project measures microplastic contamination in urban soil and stormwater samples collected from parks, roadways, and drainage systems. Student researchers will assist with sample collection, filtration, microscopy, spectroscopy preparation, lab notebook maintenance, and data summaries. The project is appropriate for students interested in environmental chemistry, toxicology, pollution, sustainability, or public health.
+Required Skills: General chemistry completed, lab safety awareness, precision in measurement and documentation.
+Preferred Skills: Spectroscopy, microscopy, environmental sampling, analytical chemistry coursework.
+User-Defined Criteria: 6 hours per week; lab and field; must complete safety training; students must be available for scheduled sample processing windows.
+PI Strengths and Preferences: Dr. Okafor is detail-oriented, rigorous, and supportive of students who want to improve technical lab discipline. He prefers students who are careful, patient, and willing to repeat procedures until data quality is acceptable.
+________________
+
+
+9. Student Mental Health Help-Seeking Behaviors
+PI: Dr. Marissa Nguyen
+Sponsoring Department: Psychology
+Opportunity Type: Behavioral research, survey design, student wellbeing
+Best-Fit Majors: Psychology, public health, social work, education, honors
+Research Opportunity Description:
+ This project examines the factors that influence whether college students seek mental health support, including stigma, cultural expectations, prior experiences, perceived access, and peer norms. Research assistants will support survey design, recruitment, literature review, coding of open-ended responses, and preparation of campus-facing findings. This opportunity is a strong match for students interested in counseling, psychology, public health, student affairs, or health communication.
+Required Skills: Discretion, empathy, professional communication, basic research methods knowledge.
+Preferred Skills: Statistics, Qualtrics, psychology coursework, interest in mental health promotion.
+User-Defined Criteria: 4 hours per week; hybrid; CITI training required; no crisis counseling role; students must follow referral protocols if participants disclose distress.
+PI Strengths and Preferences: Dr. Nguyen is compassionate, reflective, and student-centered. She prefers students who are mature, culturally sensitive, and able to handle sensitive topics without overstepping their role.
+________________
+
+
+10. Tumor Microenvironment and Immune Response
+PI: Dr. Grace Holloway
+Sponsoring Department: Biomedical Sciences
+Opportunity Type: Cancer biology, immunology, wet lab
+Best-Fit Majors: Biology, biochemistry, biomedical sciences, pre-medicine, honors
+Research Opportunity Description:
+ The Holloway Lab studies how immune cells interact with tumor microenvironments and how inflammatory signaling may influence cancer progression. Student researchers will assist with cell culture preparation, reagent tracking, literature summaries, imaging support, and lab data organization. Advanced students may support immunoassay workflows or poster preparation. This is a strong pre-med or biomedical research opportunity for students seeking rigorous lab experience.
+Required Skills: Biology II completed, strong attention to protocol, lab safety, ability to commit consistent weekly hours.
+Preferred Skills: Cell culture, sterile technique, immunology coursework, chemistry background.
+User-Defined Criteria: 8 hours per week; in-person; sophomores and above preferred; two-semester commitment strongly preferred; safety and CITI training required.
+PI Strengths and Preferences: Dr. Holloway is demanding but highly developmental. She prefers students who are disciplined, resilient, precise, and willing to earn increased responsibility over time.
+________________
+
+
+11. Rural EMS Response Times and Patient Outcomes
+PI: Dr. Thomas Avery
+Sponsoring Department: Public Health and Emergency Medical Services
+Opportunity Type: Health systems, EMS, data analysis, field interviews
+Best-Fit Majors: Public health, health sciences, pre-medicine, data analytics, emergency management
+Research Opportunity Description:
+ This project investigates how rural EMS response times, transport distances, staffing models, and hospital access affect patient outcomes. Student researchers will assist with literature review, data cleaning, GIS support, interview scheduling, and summary reports for community partners. Students will gain exposure to emergency care systems, rural health disparities, and applied public health research.
+Required Skills: Excel proficiency, professional communication, ability to handle operational data responsibly.
+Preferred Skills: EMS or fire service experience, GIS, statistics, rural health interest.
+User-Defined Criteria: 5 hours per week; hybrid; occasional field interviews; students must complete confidentiality training; no emergency response duties.
+PI Strengths and Preferences: Dr. Avery is pragmatic, mission-driven, and strong at connecting research to real-world systems improvement. He prefers students who are professional, service-oriented, and comfortable working with public safety partners.
+________________
+
+
+12. Undergraduate Research Access and First-Generation Student Success
+PI: Dr. Lillian Brooks
+Sponsoring Department: Honors College
+Opportunity Type: Higher education research, equity analytics, qualitative methods
+Best-Fit Majors: Honors, education, sociology, public policy, psychology
+Research Opportunity Description:
+ This project studies how first-generation and transfer students learn about, apply for, and participate in undergraduate research opportunities. Research assistants will help conduct interviews, code student narratives, review institutional participation data, and develop recommendations for improving research access. The project is well-suited for students interested in education, equity, student success, honors programming, or institutional research.
+Required Skills: Strong writing, professionalism, interest in equity and student success, ability to protect confidentiality.
+Preferred Skills: Qualitative coding, survey design, advising or peer mentoring experience.
+User-Defined Criteria: 4 hours per week; hybrid; first-generation students encouraged but not required; CITI training required; may include presentation to campus stakeholders.
+PI Strengths and Preferences: Dr. Brooks is inclusive, reflective, and strong at helping students connect lived experience to scholarship. She prefers students who are thoughtful, ethical, and comfortable discussing barriers without making assumptions.
+________________
+
+
+13. Antibiotic Resistance in Campus and Community Environments
+PI: Dr. Felipe Santos
+Sponsoring Department: Microbiology
+Opportunity Type: Microbiology, infectious disease, wet lab
+Best-Fit Majors: Biology, microbiology, pre-medicine, public health
+Research Opportunity Description:
+ The Santos Lab is studying antibiotic-resistant bacteria collected from campus and community environmental sites. Student researchers will help collect samples, culture bacteria, maintain lab records, assist with susceptibility testing, and summarize findings for public health audiences. This opportunity is appropriate for students interested in infectious disease, medicine, epidemiology, laboratory science, or environmental health.
+Required Skills: Microbiology completed or concurrent enrollment, lab safety, careful documentation, comfort following aseptic technique after training.
+Preferred Skills: PCR exposure, epidemiology interest, prior wet lab experience.
+User-Defined Criteria: 6 hours per week; in-person lab; safety training required; students must follow biosafety protocols without exception.
+PI Strengths and Preferences: Dr. Santos is energetic, teaching-oriented, and focused on building student confidence in microbiology technique. He prefers students who are cautious, coachable, and genuinely interested in infectious disease.
+________________
+
+
+14. Wearable Sensor Data for Injury Prevention in Student Athletes
+PI: Dr. Rebecca Stein
+Sponsoring Department: Kinesiology
+Opportunity Type: Sports science, biomechanics, applied field research
+Best-Fit Majors: Exercise science, athletic training, data science, pre-PT, pre-medicine
+Research Opportunity Description:
+ This project uses wearable sensor data to identify movement patterns, workload trends, and fatigue indicators associated with injury risk in student athletes. Research assistants will help with device setup, testing sessions, data entry, athlete scheduling, and summary dashboards. Students will gain experience in human performance research, sports medicine, biomechanics, and applied analytics.
+Required Skills: Professionalism around athletes, basic Excel, reliability during scheduled testing windows, interest in human performance.
+Preferred Skills: Motion analysis, statistics, athletic training exposure, wearable technology experience.
+User-Defined Criteria: 5 hours per week; field and lab; some early morning or evening testing; students must follow privacy and athlete data protocols.
+PI Strengths and Preferences: Dr. Stein is applied, energetic, and highly collaborative with athletics staff. She prefers students who are punctual, confident interacting with teams, and able to balance scientific rigor with real-world constraints.
+________________
+
+
+15. Cybersecurity Behavior and Phishing Susceptibility Among Students
+PI: Dr. Omar Hassan
+Sponsoring Department: Information Systems
+Opportunity Type: Cybersecurity, behavioral research, analytics
+Best-Fit Majors: Information systems, computer science, business analytics, psychology
+Research Opportunity Description:
+ This project examines how students recognize, respond to, and learn from simulated phishing attempts and cybersecurity awareness campaigns. Research assistants will help design survey instruments, classify response patterns, review cybersecurity education literature, and prepare recommendations for improving campus digital safety. This is a strong opportunity for students interested in cybersecurity, behavioral analytics, risk communication, or technology adoption.
+Required Skills: Basic statistics, ethical judgment, confidentiality, comfort working with survey and behavioral data.
+Preferred Skills: Cybersecurity coursework, Python or R, business analytics, human factors interest.
+User-Defined Criteria: 4 hours per week; remote eligible; must complete research ethics training; students will not access private account credentials or live security systems.
+PI Strengths and Preferences: Dr. Hassan is strategic, systems-oriented, and clear in expectations. He prefers students who are ethical, skeptical, analytical, and able to think about technology from both human and technical perspectives.
+________________
+
+
+16. Community-Based Diabetes Prevention Program Evaluation
+PI: Dr. Nicole Freeman
+Sponsoring Department: Nursing and Public Health
+Opportunity Type: Community health, program evaluation, fieldwork
+Best-Fit Majors: Nursing, public health, nutrition, health sciences, pre-health
+Research Opportunity Description:
+ This project evaluates a community diabetes prevention program focused on lifestyle change, nutrition education, and health coaching. Student researchers will assist with participant surveys, attendance tracking, educational material review, data entry, and community partner communication. Students will gain experience in applied public health, chronic disease prevention, community-engaged research, and program evaluation.
+Required Skills: Professional communication, reliability, basic spreadsheet skills, respect for community partners.
+Preferred Skills: Nutrition coursework, Spanish language ability, community outreach, health coaching interest.
+User-Defined Criteria: 4 to 6 hours per week; evening availability twice monthly; community fieldwork; students must complete confidentiality and human subjects training.
+PI Strengths and Preferences: Dr. Freeman is warm, practical, and community-centered. She prefers students who are dependable, respectful, humble, and comfortable working outside the university environment.
+________________
+
+
+17. Astronomy Data Classification Using Public Telescope Archives
+PI: Dr. Leo Vasquez
+Sponsoring Department: Physics and Astronomy
+Opportunity Type: Data analysis, astronomy, remote research
+Best-Fit Majors: Physics, mathematics, computer science, data science, honors
+Research Opportunity Description:
+ This project uses public telescope archive data to classify astronomical objects and identify patterns in brightness, motion, and spectral features. Student researchers will assist with data retrieval, coding notebooks, classification checks, literature review, and visualization. This opportunity provides a low-barrier entry point into computational research using publicly available scientific datasets.
+Required Skills: Calculus completed or concurrent, comfort learning computational tools, attention to data quality.
+Preferred Skills: Python, Jupyter notebooks, astronomy coursework, statistics.
+User-Defined Criteria: 5 hours per week; remote eligible; students must attend virtual or in-person weekly check-in; suitable for students without prior wet lab access.
+PI Strengths and Preferences: Dr. Vasquez is patient, conceptually strong, and supportive of students new to research. He prefers students who are curious, mathematically persistent, and comfortable learning through trial and error.
+________________
+
+
+18. Maternal Health Communication and Patient Education Materials
+PI: Dr. Hannah Klein
+Sponsoring Department: Communication Studies and Public Health
+Opportunity Type: Health communication, maternal health, qualitative review
+Best-Fit Majors: Communication, public health, nursing, pre-medicine, graphic design
+Research Opportunity Description:
+ This project evaluates the clarity, cultural responsiveness, and usability of maternal health education materials used in clinical and community settings. Student researchers will review patient-facing materials, conduct readability assessments, help organize focus group feedback, and support development of plain-language recommendations. The project is ideal for students interested in maternal health, patient education, communication, health equity, or medical humanities.
+Required Skills: Strong writing, attention to language, professionalism, ability to review sensitive health content.
+Preferred Skills: Plain-language writing, Canva or design tools, qualitative research, maternal health interest.
+User-Defined Criteria: 4 hours per week; hybrid; students may assist with community feedback sessions; no clinical counseling responsibilities.
+PI Strengths and Preferences: Dr. Klein is thoughtful, interdisciplinary, and strong at translating complex concepts into accessible language. She prefers students who write clearly, listen carefully, and respect patient perspectives.
+________________
+
+
+19. Biodiversity Survey of Local Prairie Restoration Sites
+PI: Dr. Andrew Morrison
+Sponsoring Department: Ecology
+Opportunity Type: Field ecology, conservation, environmental science
+Best-Fit Majors: Biology, environmental science, geography, sustainability, honors
+Research Opportunity Description:
+ This project monitors plant, insect, and bird biodiversity at local prairie restoration sites to assess ecological recovery over time. Student researchers will assist with transect surveys, species identification, GPS tagging, data entry, photo documentation, and seasonal field reports. This opportunity is ideal for students interested in conservation biology, ecology, environmental fieldwork, natural resource management, or graduate study in environmental science.
+Required Skills: Comfort with outdoor work, careful observation, basic data entry, ability to follow field protocols.
+Preferred Skills: Plant identification, GPS/GIS, ecology coursework, photography, field notebook experience.
+User-Defined Criteria: 5 to 7 hours per week; field-based; early mornings may be required; must be able to walk uneven terrain; seasonal commitment preferred.
+PI Strengths and Preferences: Dr. Morrison is calm, observant, and deeply field-oriented. He prefers students who are patient, detail-focused, comfortable outdoors, and willing to learn species identification over time.
+________________
+
+
+20. Ethics of AI in Healthcare Decision Support
+PI: Dr. Cassandra Lee
+Sponsoring Department: Philosophy and Health Informatics
+Opportunity Type: Bioethics, health technology, policy research
+Best-Fit Majors: Philosophy, computer science, public health, pre-medicine, health informatics
+Research Opportunity Description:
+ This project examines the ethical, clinical, and policy implications of AI-enabled decision support tools in healthcare. Student researchers will assist with literature review, case analysis, policy comparison, annotated bibliographies, and seminar discussion briefs. Topics may include bias, transparency, clinician accountability, patient consent, explainability, and risk in high-stakes clinical settings. This opportunity is well-suited for students interested in medicine, law, public health, computer science, philosophy, or health policy.
+Required Skills: Strong reading and writing, ability to synthesize complex arguments, interest in healthcare technology.
+Preferred Skills: Ethics coursework, health policy interest, AI literacy, writing sample, debate or seminar experience.
+User-Defined Criteria: 4 hours per week; remote and seminar-based; students must prepare weekly reading notes; no coding required.
+PI Strengths and Preferences: Dr. Lee is rigorous, discussion-driven, and excellent at developing student reasoning. She prefers students who are intellectually honest, precise with language, comfortable with ambiguity, and willing to defend claims with evidence.
+Recommended ThinkR Training Fields
+For model ingestion, I would structure each opportunity with these fields:
+Field
+	Purpose
+	Opportunity_Title
+	Display title and semantic match anchor
+	PI_Name
+	Faculty profile link
+	Sponsoring_Department
+	Institutional routing and department filter
+	Opportunity_Type
+	Lab, field, clinical, data, community, humanities, honors
+	Best_Fit_Majors
+	Student eligibility and interest matching
+	Research_Opportunity_Description
+	Job-description-style text for semantic matching
+	Required_Skills
+	Hard eligibility criteria
+	Preferred_Skills
+	Weighted compatibility inputs
+	User_Defined_Criteria
+	PI-controlled limits, time, modality, prerequisites, capacity
+	PI_Strengths_and_Preferences
+	Mentorship style and student fit indicators
+	Modality
+	In-person, hybrid, remote, field
+	Weekly_Time_Commitment
+	Availability matching
+	Capacity
+	Role availability
+	Training_Required
+	CITI, HIPAA, lab safety, biosafety, confidentiality
+	Match_Signals
+	Interests, skills, schedule, modality, readiness, communication style
